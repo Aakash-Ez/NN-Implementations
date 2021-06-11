@@ -3,7 +3,6 @@ from tensorflow.keras import layers
 from tensorflow.keras.callbacks import Callback
 import os
 from utils.visualize import show_nimgs
-import pickle
 
 cwd = os.getcwd()
 
@@ -58,8 +57,6 @@ class Autoencoder:
         self.history = self.autoencoder.fit(self.X_train, self.X_train, epochs=self.epochs, batch_size=self.batch_size, 
         shuffle=True, validation_data=(self.X_test, self.X_test), callbacks=self.callbacks)
     def save(self):
-        with open(cwd+"/model/history"+self.name+".pkl", 'wb') as handle:
-          pickle.dump(self.history, handle, protocol=pickle.HIGHEST_PROTOCOL)
         self.autoencoder.save(cwd+"/model/autoencoder"+self.name+".h5")
         self.encoder.save(cwd+"/model/encoder"+self.name+".h5")
-        self.decoder.save(cwd+"/mode/decoder"+self.name+".h5")
+        self.decoder.save(cwd+"/model/decoder"+self.name+".h5")
