@@ -1,4 +1,4 @@
-# Distribution Image
+# Distribution Images
 ![Distribution](distribution.png)
 # Output Image
 ![Output Image](test.gif)
