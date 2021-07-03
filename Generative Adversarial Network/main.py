@@ -1,7 +1,6 @@
 import numpy as np
 from scripts.model import GAN_Model
 from scripts.visualize import show_imgs
-from scripts.data import load_data
 from keras.datasets.mnist import load_data
 
 (x_train, _), (x_test, _) = load_data()
